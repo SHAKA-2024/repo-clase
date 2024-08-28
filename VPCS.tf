@@ -4,6 +4,7 @@ resource "aws_vpc" "vpc_proyecto" {
 
     tags = {
         Name = "VPC_proyecto_final"
+        proyecto = "mintic"
     }
   
 }
@@ -16,6 +17,7 @@ resource "aws_subnet" "subnet1_proyecto" {
 
     tags = {
        Name = "subnet1_proyecto_final"
+       proyecto = "mintic"
     }
   
 }
@@ -40,6 +42,7 @@ resource "aws_subnet" "subnet3_proyecto" {
 
     tags = {
        Name = "subnet3_proyecto_final"
+       proyecto = "mintic"
     }
   
 }
@@ -52,6 +55,7 @@ resource "aws_subnet" "subnet4_proyecto" {
 
     tags = {
        Name = "subnet4_proyecto_final"
+       proyecto = "mintic"
     }
   
 }
@@ -61,6 +65,7 @@ resource "aws_internet_gateway" "gw_proyecto" {
 
     tags = {
       Name = "GW_proyecto_final"
+      proyecto = "mintic"
     }
   
 }
@@ -76,6 +81,7 @@ resource "aws_route_table" "rt_proyecto" {
     tags = {
 
        Name = "rt_proyecto_final"
+       proyecto = "mintic"
     }
   
 }
@@ -83,5 +89,11 @@ resource "aws_route_table" "rt_proyecto" {
 resource "aws_route_table_association" "a_rt_proyecto" {
     subnet_id = aws_subnet.subnet1_proyecto.id
     route_table_id = aws_route_table.rt_proyecto.id
+ 
+    tags = {
+    
+           Name = "a_rt_proyecto"
+           proyecto = "mintic"
+        }
   
 }
